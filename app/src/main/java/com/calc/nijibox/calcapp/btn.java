@@ -1,8 +1,5 @@
 package com.calc.nijibox.calcapp;
 
-/**
- * Created by nijimac103 on 2017/11/22.
- */
 
 public class btn {
     String Temp;
@@ -14,7 +11,7 @@ public class btn {
     String NumBtn(String Numbers, String Now){
         Temp = Numbers;
 
-        if(Now == "0"|| Now == ""){
+        if(Now.equals("0") || Now.equals("")){
             Temp = Numbers;
         }else{
             Temp = Now + Temp;
