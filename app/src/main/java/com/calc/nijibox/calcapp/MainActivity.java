@@ -1,5 +1,7 @@
 package com.calc.nijibox.calcapp;
 
+
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -23,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
 
     private Button push_buttonEqual;
     private Button push_buttonAc;
+    private Button push_log;
 
     private Button push_btn0;
     private Button push_btn1;
@@ -51,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
 
          push_buttonEqual = (Button) findViewById(R.id.buttonEqual);
          push_buttonAc = (Button) findViewById(R.id.buttonAllClear);
+         push_log = (Button) findViewById(R.id.buttonLog);
 
          push_btn0 = (Button) findViewById(R.id.button0);
          push_btn1 = (Button) findViewById(R.id.button1);
@@ -228,6 +232,14 @@ public class MainActivity extends AppCompatActivity {
                 Number = BT.Equal(Number);
                 tow = false;
                 counter_text.setText(Number);    //数値をストリングに変換して表示
+            }
+        });
+
+        push_log.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplication(), LogActivity.class);
+                startActivity(intent);
             }
         });
 
