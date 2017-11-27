@@ -175,13 +175,13 @@ public class MainActivity extends AppCompatActivity {
                     BT.Temp(Number, 2);
                     relay = Number + "-";
                     Number = "";
-                    counter_text.setText(relay + Number);    //数値をストリングに変換して表示
+                    counter_text.setText(relay + Number);
                 }else {
                     BT.Temp(Number, 2);
                     tow = true;
                     relay = Number + "-";
-                    Number = "";                      //一時的に格納する値を初期化してプラスの趣旨を表示
-                    counter_text.setText(relay + Number);    //数値をストリングに変換して表示
+                    Number = "";
+                    counter_text.setText(relay + Number);
                 }
             }
         });
@@ -195,13 +195,13 @@ public class MainActivity extends AppCompatActivity {
                     BT.Temp(Number, 3);
                     relay = Number + "×";
                     Number = "";
-                    counter_text.setText(relay + Number);    //数値をストリングに変換して表示
+                    counter_text.setText(relay + Number);
                 }else {
                     BT.Temp(Number, 3);
                     tow = true;
                     relay = Number + "×";
-                    Number = "";                      //一時的に格納する値を初期化してプラスの趣旨を表示
-                    counter_text.setText(relay + Number);    //数値をストリングに変換して表示
+                    Number = "";
+                    counter_text.setText(relay + Number);
                 }
             }
         });
@@ -214,24 +214,24 @@ public class MainActivity extends AppCompatActivity {
                     BT.Temp(Number, 4);
                     relay = Number + "÷";
                     Number = "";
-                    counter_text.setText(relay + Number);    //数値をストリングに変換して表示
+                    counter_text.setText(relay + Number);
                 }else {
                     BT.Temp(Number, 4);
                     tow = true;
                     relay = Number + "÷";
-                    Number = "";                      //一時的に格納する値を初期化してプラスの趣旨を表示
-                    counter_text.setText(relay + Number);    //数値をストリングに変換して表示
+                    Number = "";
+                    counter_text.setText(relay + Number);
                 }
             }
         });
 
-        //完成
+
         push_buttonEqual.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Number = BT.Equal(Number);
                 tow = false;
-                counter_text.setText(Number);    //数値をストリングに変換して表示
+                counter_text.setText(Number);
             }
         });
 
@@ -249,7 +249,7 @@ public class MainActivity extends AppCompatActivity {
                 BT.Clear();
                 Number = "0";
                 relay = "";
-                counter_text.setText(Number);    //数値をストリングに変換して表示
+                counter_text.setText(Number);
             }
         });
 
