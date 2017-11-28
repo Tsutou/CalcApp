@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
     private Button push_buttonEqual;
     private Button push_buttonAc;
     private Button push_log;
+    private Button push_shared;
 
     private Button push_btn0;
     private Button push_btn1;
@@ -55,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
          push_buttonEqual = (Button) findViewById(R.id.buttonEqual);
          push_buttonAc = (Button) findViewById(R.id.buttonAllClear);
          push_log = (Button) findViewById(R.id.buttonLog);
+         push_shared = (Button) findViewById(R.id.buttonShared);
 
          push_btn0 = (Button) findViewById(R.id.button0);
          push_btn1 = (Button) findViewById(R.id.button1);
@@ -151,7 +153,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(tow){
-                    Number = BT.Equal(Number);
+                    Number = BT.Equal(MainActivity.this,Number);
                     BT.Temp(Number, 1);
                     relay = Number + "+";
                     Number = "";
@@ -171,7 +173,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(tow){
-                    Number = BT.Equal(Number);
+                    Number = BT.Equal(MainActivity.this,Number);
                     BT.Temp(Number, 2);
                     relay = Number + "-";
                     Number = "";
@@ -191,7 +193,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(tow){
-                    Number = BT.Equal(Number);
+                    Number = BT.Equal(MainActivity.this,Number);
                     BT.Temp(Number, 3);
                     relay = Number + "×";
                     Number = "";
@@ -210,7 +212,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(tow){
-                    Number = BT.Equal(Number);
+                    Number = BT.Equal(MainActivity.this,Number);
                     BT.Temp(Number, 4);
                     relay = Number + "÷";
                     Number = "";
@@ -229,7 +231,7 @@ public class MainActivity extends AppCompatActivity {
         push_buttonEqual.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Number = BT.Equal(Number);
+                Number = BT.Equal(MainActivity.this,Number);
                 tow = false;
                 counter_text.setText(Number);
             }
@@ -239,6 +241,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplication(), LogActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        push_shared.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplication(), SharedActivity.class);
                 startActivity(intent);
             }
         });
