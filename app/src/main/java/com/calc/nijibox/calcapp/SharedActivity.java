@@ -12,17 +12,25 @@ import android.widget.EditText;
 import android.widget.TextView;
 public class SharedActivity extends AppCompatActivity {
 
-    private static SharedPreferences sharedpreferences;
-    public static final String MyPREFERENCES = "myprefs";
-    public static final  String value = "log";
-    private EditText editText;
-    private TextView textWrite, textRead;
+    private TextView textView;
 
     @Override
     protected  void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_shared);
+
+        Button returnButton = findViewById(R.id.return_button);
+        returnButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
+        SharedPreferences data = getSharedPreferences(btn.MyPREFERENCES, Context.MODE_PRIVATE);
+
+        System.out.println(data);
     }
 
 }
