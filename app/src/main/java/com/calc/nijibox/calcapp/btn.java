@@ -74,9 +74,11 @@ public class btn extends AppCompatActivity{
                 break;
         }
 
+        //ただのログ書き込み
         logs.add(log);
+        //DB挿入
         SqlActivity.insert_sql(context,log);
-
+        //shared preferences 書き込み(できない)
         SharedPreferences.Editor editor = sharedpreferences.edit();
         editor.putString(value,log);
         editor.apply();
