@@ -1,6 +1,8 @@
 package com.calc.nijibox.calcapp;
 
 import android.app.Activity;
+import android.content.ContentValues;
+import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.content.Context;
@@ -13,6 +15,7 @@ import java.util.ArrayList;
 
 public class btn extends AppCompatActivity{
 
+    //ただのログ操作
     Context mcontext;
     String Temp;
     String Temp2;
@@ -21,6 +24,7 @@ public class btn extends AppCompatActivity{
     int Temp5;
     String log;
 
+    //shared preferences操作
     private static SharedPreferences sharedpreferences;
 
     public static final String MyPREFERENCES = "myprefs";
@@ -50,6 +54,7 @@ public class btn extends AppCompatActivity{
 
         sharedpreferences = mcontext.getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
 
+
         switch(Temp5){
             case 1:
                 Temp4 = Integer.parseInt(Temp3) + Integer.parseInt(Now);
@@ -70,6 +75,7 @@ public class btn extends AppCompatActivity{
         }
 
         logs.add(log);
+        SqlActivity.insert_sql(context,log);
 
         SharedPreferences.Editor editor = sharedpreferences.edit();
         editor.putString(value,log);

@@ -1,19 +1,38 @@
 package com.calc.nijibox.calcapp;
 
+import android.content.ContentValues;
+import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import static com.calc.nijibox.calcapp.btn.logs;
+
 public class SqlActivity extends AppCompatActivity {
+
+    public static void insert_sql(Context context, String str){
+
+        MyOpenHelper helper = new MyOpenHelper(context);
+        SQLiteDatabase db = helper.getReadableDatabase();
+
+        ContentValues insertValues = new ContentValues();
+        insertValues.put("formula", str);
+        db.insert("logs", str, insertValues);
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState){
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sql);
 
-        LinearLayout layout = new LinearLayout(this);
+        LinearLayout layout = new LinearLayout(SqlActivity.this);
         layout.setOrientation(LinearLayout.VERTICAL);
         setContentView(layout);
 
@@ -32,5 +51,7 @@ public class SqlActivity extends AppCompatActivity {
 
         c.close();
         db.close();
+
     }
+
 }
