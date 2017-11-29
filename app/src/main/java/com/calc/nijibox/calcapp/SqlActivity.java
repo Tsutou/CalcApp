@@ -42,6 +42,7 @@ public class SqlActivity extends AppCompatActivity {
         Cursor c = db.query("logs", new String[] { "formula" }, null, null, null, null, null);
 
         boolean mov = c.moveToFirst();
+
         while(mov){
             TextView textView = new TextView(this);
             textView.setText(String.format("Log:%s", c.getString(0)));
