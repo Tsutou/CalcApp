@@ -72,7 +72,7 @@ public class btn extends AppCompatActivity{
         logs.add(log);
 
         SharedPreferences.Editor editor = sharedpreferences.edit();
-        editor.putString(value, log);
+        editor.putString(value,log);
         editor.apply();
         return String.valueOf(Temp4);
 
