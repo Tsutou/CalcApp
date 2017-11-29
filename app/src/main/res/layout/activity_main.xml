@@ -64,7 +64,7 @@
             tools:layout_editor_absoluteY="2dp" />
 
         <Button
-            android:id="@+id/buttonDot"
+            android:id="@+id/buttonSql"
             style="@style/Widget.AppCompat.Button.Colored"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"

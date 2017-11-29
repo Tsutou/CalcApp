@@ -27,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
     private Button push_buttonAc;
     private Button push_log;
     private Button push_shared;
+    private Button push_sql;
 
     private Button push_btn0;
     private Button push_btn1;
@@ -57,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
          push_buttonAc = (Button) findViewById(R.id.buttonAllClear);
          push_log = (Button) findViewById(R.id.buttonLog);
          push_shared = (Button) findViewById(R.id.buttonShared);
+         push_sql = (Button) findViewById(R.id.buttonSql);
 
          push_btn0 = (Button) findViewById(R.id.button0);
          push_btn1 = (Button) findViewById(R.id.button1);
@@ -249,6 +251,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplication(), SharedActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        push_sql.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplication(), SqlActivity.class);
                 startActivity(intent);
             }
         });
