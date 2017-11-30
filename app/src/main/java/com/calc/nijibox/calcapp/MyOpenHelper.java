@@ -15,7 +15,6 @@ public class MyOpenHelper extends SQLiteOpenHelper{
         db.execSQL("create table logs(  formula text not null );");
     }
 
-
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 

@@ -71,6 +71,13 @@ public class MainActivity extends AppCompatActivity {
          push_btn8 = (Button) findViewById(R.id.button8);
          push_btn9 = (Button) findViewById(R.id.button9);
 
+
+        //Intentを取得
+        Intent intent = getIntent();
+        //intentから指定キーの文字列を取得する
+        String data = intent.getStringExtra("history");
+        counter_text.setText(data);
+
         push_btn0.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
@@ -169,7 +176,6 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-
 
         push_btnSub.setOnClickListener(new View.OnClickListener() {
             @Override
