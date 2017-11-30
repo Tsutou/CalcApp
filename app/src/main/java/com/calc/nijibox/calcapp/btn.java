@@ -1,34 +1,17 @@
 package com.calc.nijibox.calcapp;
 
-import android.app.Activity;
-import android.content.ContentValues;
-import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.content.Context;
-import android.content.SharedPreferences;
-import android.content.SharedPreferences.Editor;
-import android.support.v4.widget.TextViewCompat;
-import android.util.Log;
-
 import java.util.ArrayList;
 
 public class btn extends AppCompatActivity{
 
-    //ただのログ操作
-    Context mcontext;
     String Temp;
     String Temp2;
     String Temp3;
     int Temp4;
     int Temp5;
     String log;
-
-    //shared preferences操作
-    private static SharedPreferences sharedpreferences;
-
-    public static final String MyPREFERENCES = "myprefs";
-    public static final  String value = "log";
 
     public static ArrayList<String> logs = new ArrayList<>();
 
@@ -50,10 +33,6 @@ public class btn extends AppCompatActivity{
     }
 
     String Equal(Context context,String Now){
-        mcontext = context;
-
-        sharedpreferences = mcontext.getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
-
 
         switch(Temp5){
             case 1:
@@ -76,12 +55,13 @@ public class btn extends AppCompatActivity{
 
         //ただのログ書き込み
         logs.add(log);
+
+        //shared preferences挿入
+        SharedActivity.insert_shared(context,log);
+
         //DB挿入
         SqlActivity.insert_sql(context,log);
-        //shared preferences 書き込み(できない)
-        SharedPreferences.Editor editor = sharedpreferences.edit();
-        editor.putString(value,log);
-        editor.apply();
+
         return String.valueOf(Temp4);
 
     }
