@@ -8,12 +8,6 @@
     android:layout_gravity="center_horizontal"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="match_parent"
-        android:layout_height="380dp"
-        android:text="SQLite Data" />
-
     <Button
         android:id="@+id/return_button"
         android:layout_width="wrap_content"

@@ -79,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-         push_btn1.setOnClickListener(new View.OnClickListener(){
+        push_btn1.setOnClickListener(new View.OnClickListener(){
              @Override
              public void onClick(View v){
                  Number = BT.NumBtn( "1" , Number);

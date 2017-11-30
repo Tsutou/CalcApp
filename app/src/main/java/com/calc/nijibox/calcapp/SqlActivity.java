@@ -2,17 +2,12 @@ package com.calc.nijibox.calcapp;
 
 import android.content.ContentValues;
 import android.content.Context;
-import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
-import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-
-import static com.calc.nijibox.calcapp.btn.logs;
 
 public class SqlActivity extends AppCompatActivity {
 
@@ -45,7 +40,7 @@ public class SqlActivity extends AppCompatActivity {
 
         while(mov){
             TextView textView = new TextView(this);
-            textView.setText(String.format("Log:%s", c.getString(0)));
+            textView.setText(String.format("%s", c.getString(0)));
             mov = c.moveToNext();
             layout.addView(textView);
         }
