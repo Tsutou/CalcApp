@@ -34,6 +34,7 @@ public class btn extends AppCompatActivity{
 
     String Equal(Context context,String Now){
 
+        //エラーチェックここで
         switch(Temp5){
             case 1:
                 Temp4 = Integer.parseInt(Temp3) + Integer.parseInt(Now);
@@ -50,6 +51,8 @@ public class btn extends AppCompatActivity{
             case 4:
                 Temp4 = Integer.parseInt(Temp3) / Integer.parseInt(Now);
                 log = Temp3 + " " + "÷" + " " + Now + " " + "="+ " " + Temp4 + "\n";
+                break;
+            default:
                 break;
         }
 

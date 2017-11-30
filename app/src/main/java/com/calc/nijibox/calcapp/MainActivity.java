@@ -158,6 +158,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
         push_btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -167,7 +168,7 @@ public class MainActivity extends AppCompatActivity {
                     relay = Number + "+";
                     Number = "";
                     counter_text.setText(relay + Number);
-                }else {
+                }else{
                     BT.Temp(Number, 1);
                     tow = true;
                     relay = Number + "+";
@@ -234,7 +235,6 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-
 
         push_buttonEqual.setOnClickListener(new View.OnClickListener() {
             @Override
