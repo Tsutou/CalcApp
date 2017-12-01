@@ -162,19 +162,21 @@ public class MainActivity extends AppCompatActivity {
         push_btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(tow){
-                    Number = BT.Equal(MainActivity.this,Number);
-                    BT.Temp(Number, 1);
-                    relay = Number + "+";
-                    Number = "";
-                    counter_text.setText(relay + Number);
-                }else{
-                    BT.Temp(Number, 1);
-                    tow = true;
-                    relay = Number + "+";
-                    Number = "";
-                    counter_text.setText(relay + Number);
-                }
+                
+            if (tow) {
+                Number = BT.Equal(MainActivity.this, Number);
+                BT.Temp(Number, 1);
+                relay = Number + "+";
+                Number = "";
+                counter_text.setText(relay + Number);
+            } else {
+                BT.Temp(Number, 1);
+                tow = true;
+                relay = Number + "+";
+                Number = "";
+                counter_text.setText(relay + Number);
+            }
+
             }
         });
 

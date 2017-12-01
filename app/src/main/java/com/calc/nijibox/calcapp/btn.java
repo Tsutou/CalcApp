@@ -1,5 +1,6 @@
 package com.calc.nijibox.calcapp;
 
+import android.support.v4.app.NotificationBuilderWithBuilderAccessor;
 import android.support.v7.app.AppCompatActivity;
 import android.content.Context;
 import java.util.ArrayList;
@@ -16,6 +17,8 @@ public class btn extends AppCompatActivity{
     public static ArrayList<String> logs = new ArrayList<>();
 
     String NumBtn(String Numbers, String Now){
+
+
         Temp = Numbers;
 
         if(Now.equals("0") || Now.equals("")){
@@ -28,6 +31,7 @@ public class btn extends AppCompatActivity{
 
     //前回の計算結果
     void Temp(String oldNum, int swift) {
+
         Temp3 = oldNum;
         Temp5 = swift;
     }
